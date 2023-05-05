@@ -5,8 +5,12 @@ from tkinter import *
 from tkinter import messagebox
 import threading
 
-antal = 6
+class Spelklass(Tk):
+    def __init__(self):
+    self.geometry("600x600")
+    self.config(bg="white")
 
-class Spel:
-    def __init__(self) -> None:
-        pass
+if __name__=="__main__":
+    Spel=Spelklass()
+    Spel.Label()
+    Spel.mainloop
