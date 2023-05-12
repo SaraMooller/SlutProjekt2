@@ -13,11 +13,12 @@ class Spelklass():
         self.root.config(bg="black")
         self.font = font.Font(size=30)
         self.symbols = self.lipsum(["!","$","?"])
+        self.i = 0
 
         for column in range(len(self.symbols)):
             for row in range(len(self.symbols[0])):  
                 button1 = Button(self.root, text="", width=8, height=3, font=self.font, bg = "pink")
-                button1["command"]=lambda r=row, c=column, b=button1:self.click(r, c, b)
+                button1["command"]=lambda r=row, c=column, b=button1: self.click(r, c, b)
                 button1.grid(column=row, row=column)
             
     def lipsum(self, symboler: list):
@@ -32,12 +33,16 @@ class Spelklass():
         return np.array(symbols).reshape(3,2)
     
     def click(self, row, column,button):
+        print(self.i % 2 == 0)
+        self.i += 1
         symbol = self.symbols[column,row]
         button["text"] = symbol
     
         print(row, column)
+
     
-    if 
+    
+
 
 
 
